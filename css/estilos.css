@@ -1,13 +1,22 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 /*Estilos generales*/
 html, body {
     height: 100%;
     }
     /*Modificar modelo de cajas de CSS*/
     html {
-        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
     }
     *,*::before, *::after {
-        box-sizing: inherit;
+        -webkit-box-sizing: inherit;
+                box-sizing: inherit;
     }
     /*Resetear margenes y padding*/
     * {
@@ -47,23 +56,33 @@ html, body {
     /*Seccion 1*/
 
     article > section:nth-child(1) {
+        background-image: -webkit-gradient(linear, right bottom, left top, from(rgba(55,185,30,0.83)), to(rgba(25,59,240,0.83))), url(../images/fondo_superior.jpg) ;
+        background-image: -o-linear-gradient(right bottom, rgba(55,185,30,0.83), rgba(25,59,240,0.83)), url(../images/fondo_superior.jpg) ;
         background-image: linear-gradient(to left top, rgba(55,185,30,0.83), rgba(25,59,240,0.83)), url(../images/fondo_superior.jpg) ;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center right;
     }
     
-    #intro {
+    #intro {    
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 	padding: 50px 0;
-	flex-flow: row wrap;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-ms-flex-flow: row wrap;
+    flex-flow: row wrap;
 	height: 100%;
 	min-height: 600px;
     }
     #descripcion {
+        -ms-flex-preferred-size: 60%;
         flex-basis: 60%;
         padding: 0 1em 0 0;
-        flex-grow: 2;
+        -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+         flex-grow: 2;
         color: #fff;
         text-align: justify;
     }
@@ -82,7 +101,8 @@ html, body {
         color: #008000;
     }
     #formulario {
-        flex-basis: 30%;
+        -ms-flex-preferred-size: 30%;
+         flex-basis: 30%;
         background-color: rgb(0, 0, 0.8);
         padding: 20px;
         color: #fff;
@@ -129,9 +149,16 @@ html, body {
         padding: 60px 0;
     }
     #seccionDos {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-flow: row wrap;
-        justify-content: space-between;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
         text-align: center;
     }
     #seccionDos i {
@@ -155,19 +182,26 @@ html, body {
         padding: 40px 0;
     }
     #seccionTres {
+        display: -webkit-box;
+        display: -ms-flexbox;
         display: flex;
-        flex-flow: row wrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: row wrap;
+                flex-flow: row wrap;
       
     }
     #seccionTres div {
-        flex-basis: 60%;
+        -ms-flex-preferred-size: 60%;
+            flex-basis: 60%;
         padding-right: 1.9em;
         }
     
 
 video{
     width: 40%;
-    flex-basis: 40%;
+    -ms-flex-preferred-size: 40%;
+        flex-basis: 40%;
     height: 100%;
 }
 h2 {
@@ -187,14 +221,19 @@ article > section:nth-child(4) {
 	text-align: center;
 }
 #seccionCuatro {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
 	margin: 50px auto;
 }
 
 .card {
 	margin: 20px 0.5em;
-	box-shadow: 2px 5px 15px #ccc9c9;
+	-webkit-box-shadow: 2px 5px 15px #ccc9c9;
+	        box-shadow: 2px 5px 15px #ccc9c9;
 	padding-bottom: 35px;
 }
 .card img {
@@ -213,18 +252,29 @@ article > section:nth-child(4) {
 
 /*SECCION 5*/
 article > section:nth-child(5) {
+   /* background-image:-webkit-gradient(linear, right bottom, left top, from(rgba(16, 123, 167, 0.47)), to(rgba(16, 123, 167, 0.81))), url(../images/fondo_inferior.jpg);*/
+    background-image: -o-linear-gradient(right bottom, rgba(16, 123, 167, 0.47), rgba(16, 123, 167, 0.81)), url(../images/fondo_inferior.jpg);
     background-image: linear-gradient(to left top, rgba(16, 123, 167, 0.47), rgba(16, 123, 167, 0.81)), url(../images/fondo_inferior.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center right;
 }
 #seccionCinco {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column wrap;
+            flex-flow: column wrap;
     height: 100%;
     min-width:330px;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     color: #fff;
 }
 #seccionCinco h2 {
@@ -242,6 +292,8 @@ article > section:nth-child(5) {
 }
 #seccionCinco a:hover {
 	background-color: #358d24;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
 	transition: all 0.5s;
 }
 /*footer*/
@@ -257,7 +309,7 @@ footer {
 .nav {
 	float: left;
 }
-#pieDEPagina {
+#pieDePagina {
 	overflow: hidden;
 }
 .nav li {
@@ -273,4 +325,147 @@ footer {
 }
 .nav li a:hover {
    text-decoration: underline;
+}
+/*MEDIA QUERYS*/
+/*Aplicarlos siguientes estilos cuando el tamaño del viewport se encuentres en un rango mayor  de  de 3840px- */
+@media screen and (max-width:3840px)  {
+    .container {
+        width: 91%;
+        max-width: 3840px;
+    }
+}
+/*Aplicarlos siguientes estilos cuando el tamaño del viewport se encuentres en un rango mayor  de  de 1920px- */
+@media screen and (max-width:1920px)  {
+    .container {
+        max-width: 1920px;
+    }
+}
+/*Aplicarlos siguientes estilos cuando el tamaño del viewport se encuentres en un rango de 960px- 1199px*/
+@media screen and (min-width:960px) and (max-width:1199px) {
+.col h3 {
+	font-size: 1.05rem;
+	
+}
+h2 {
+	
+	font-size: 1.43rem;
+}
+}
+/*Aplicarlos siguientes estilos cuando el tamaño del viewport sea igual  o menor  659px*/
+@media screen /*and (min-width:660px)*/ and (max-width:959px) {
+
+#intro {
+	
+	-webkit-box-orient: vertical;
+	
+	-webkit-box-direction: normal;
+	
+	    -ms-flex-flow: column wrap;
+	
+	        flex-flow: column wrap;
+	
+}
+
+h1 {
+	font-size: 3.30rem;
+	
+}
+#descripcion {
+	-ms-flex-preferred-size: 100%;
+	    flex-basis: 100%;
+	padding: 0 00 0;
+	-webkit-box-flex: 0;
+	    -ms-flex-positive: 0;
+	        flex-grow: 0;
+	text-align: justify;
+}
+#seccionDos {
+	
+	-webkit-box-orient: vertical;
+	
+	-webkit-box-direction: normal;
+	
+	    -ms-flex-flow: column wrap;
+	
+	        flex-flow: column wrap;
+	
+}
+
+.col {
+	padding: 30px 0;
+}
+article > section {
+	padding: 20px 0;
+}
+#seccionTres {
+	
+	-webkit-box-orient: vertical;
+	
+	-webkit-box-direction: normal;
+	
+	    -ms-flex-flow: column wrap;
+	
+	        flex-flow: column wrap;
+}
+
+#seccionTres div {
+	-ms-flex-preferred-size: 100%;
+	    flex-basis: 100%;
+	padding-right: 0;
+}
+#seccionTres a {
+	
+	padding: 12px 0;
+	width: 100%;
+	text-align: center;
+}
+video {
+	width: 100%;
+	-ms-flex-preferred-size: 100%;
+	    flex-basis: 100%;
+	
+}
+article > section:nth-child(4) {
+	padding: 30px 0 0;
+	
+}
+#seccionCuatro {
+	
+	-webkit-box-orient: vertical;
+	
+	-webkit-box-direction: normal;
+	
+	    -ms-flex-flow: column;
+	
+	        flex-flow: column;
+}
+#seccionCinco {
+	
+	text-align: center;
+}
+}
+/*Aplicarlos siguientes estilos cuando el tamaño del viewport se encuentres en un rango menor de  de 659px- */
+@media screen and (max-width:659px)  {
+    #logo, #infoContacto {
+        width: 100%;
+        text-align: center;
+        margin: 5px auto;
+    }
+#pieDePagina{
+    text-align: center;
+}
+.nav {
+    float: none;
+}
+
+.nav li {
+	display: block;
+	
+	margin: 20px 0;
+}
+.copyright {
+	float: none;
+	border-top: 1px solid #3e3e3e;
+	margin-top: 30px;
+}
 }
